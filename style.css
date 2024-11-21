@@ -1,0 +1,998 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* Header Section */
+.main-header {
+    background: #0052cc;
+    color: white;
+    padding: 1em 0;
+}
+
+.main-header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.main-header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.main-header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: #e0f7fa;
+    padding: 2em 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.hero button {
+    background: #0052cc;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background: #003f99;
+}
+
+/* Features Section */
+.features {
+    padding: 2em 0;
+    background: #f4f4f4;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background: white;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Footer Section */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+/* Login Section */
+.login-section {
+    padding: 2em 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.login-section h2 {
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+form {
+    background: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+form h3 {
+    margin-bottom: 1em;
+    color: #0052cc;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    text-align: left;
+    color: #555;
+}
+
+form input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    width: 100%;
+    padding: 0.8em;
+    background: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #003f99;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0;
+    font-size: 1.2em;
+    color: #888;
+}
+
+.divider span {
+    margin: 0 10px;
+    background: white;
+    padding: 0 10px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+}
+/* Booking Section */
+.booking-section {
+    padding: 2em 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.booking-section h2 {
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.search-doctor {
+    margin-bottom: 2em;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-doctor h3 {
+    margin-bottom: 1em;
+    color: #0052cc;
+}
+
+.search-doctor label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+.search-doctor select,
+.search-doctor input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.search-doctor button {
+    width: 100%;
+    padding: 0.8em;
+    background: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.search-doctor button:hover {
+    background: #003f99;
+}
+
+.doctor-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5em;
+}
+
+.doctor-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    text-align: left;
+}
+
+.doctor-card h4 {
+    color: #0052cc;
+    margin-bottom: 0.5em;
+}
+
+.doctor-card p {
+    margin: 0.5em 0;
+    color: #555;
+}
+
+.doctor-card button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.doctor-card button:hover {
+    background: #218838;
+}
+/* Appointment Section */
+.appointment-section {
+    padding: 2em 0;
+    background: #fff;
+    text-align: center;
+}
+
+.appointment-section h2 {
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.appointment-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.appointment-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+.appointment-form input,
+.appointment-form select {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.appointment-form button {
+    width: 100%;
+    padding: 0.8em;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.appointment-form button:hover {
+    background: #218838;
+}
+
+.confirmation-message {
+    margin-top: 1em;
+    color: #0052cc;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/* Profile Section */
+.profile-section {
+    padding: 2em 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.profile-section h2 {
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.user-details, .appointment-history, .change-password {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details p, .change-password input {
+    font-size: 1.1em;
+    color: #555;
+}
+
+button {
+    padding: 0.8em;
+    background: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #003f99;
+}
+
+/* Appointment History */
+.appointment-history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.appointment-history li {
+    background: #fafafa;
+    padding: 1em;
+    margin: 0.5em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Password Change */
+.change-password input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+/* Library Section */
+.library-section {
+    padding: 2em 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.library-section h2 {
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.library-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.library-content h3 {
+    margin-top: 2em;
+    color: #444;
+}
+
+.library-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.library-content li {
+    padding: 1em;
+    background: #fff;
+    margin: 0.5em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.library-content li a {
+    text-decoration: none;
+    color: #0052cc;
+}
+
+.library-content li a:hover {
+    text-decoration: underline;
+}
+/* Notifications Section */
+.notifications-section {
+    padding: 2em 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.notifications-section h2 {
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.notification-list {
+    margin-bottom: 2em;
+}
+
+.notification-list .notification {
+    padding: 1em;
+    background: #fff;
+    margin: 0.5em 0;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+
+.add-notification input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    padding: 0.8em;
+    background: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #003f99;
+}
+/* Community Section */
+.community-section {
+    padding: 2em 0;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+.community-section h2 {
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.community-content h3 {
+    margin-top: 2em;
+    color: #444;
+}
+
+.community-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.community-content li {
+    padding: 1em;
+    background: #fff;
+    margin: 0.5em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.join-workshop select,
+button {
+    padding: 1em;
+    background: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    background: #003f99;
+}
+/* Rewards Section */
+.rewards-section {
+    padding: 2em 0;
+    background: #e8f7fa;
+    text-align: center;
+}
+
+.rewards-section h2 {
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.rewards-content h3 {
+    margin-top: 2em;
+    color: #444;
+}
+
+.rewards-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rewards-content li {
+    padding: 1em;
+    background: #fff;
+    margin: 0.5em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+
+#userPoints {
+    font-weight: bold;
+    color: #00796b;
+}
+
+a {
+    text-decoration: none;
+    color: #00796b;
+}
+
+a:hover {
+    color: #004d40;
+}
+/* Logistics Section */
+.logistics-section {
+    padding: 2em 0;
+    background: #f1f8e9;
+    text-align: center;
+}
+
+.logistics-section h2 {
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.logistics-section .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logistics-section h3 {
+    color: #444;
+    margin-top: 2em;
+}
+
+button {
+    padding: 1em;
+    background: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    background: #004d40;
+}
+
+#insuranceDetails {
+    font-weight: bold;
+    color: #00796b;
+}
+
+.pharmacy-section, .laboratory-section {
+    margin-top: 2em;
+}
+/* Financial Section */
+.financial-section {
+    padding: 2em 0;
+    background: #f0f4c3;
+    text-align: center;
+}
+
+.financial-section h2 {
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.financial-section .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.payment-options, .subscription-section, .invoice-section {
+    margin-top: 2em;
+}
+
+button {
+    padding: 1em;
+    background: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    background: #004d40;
+}
+
+.payment-dropdown {
+    padding: 0.8em;
+    border-radius: 5px;
+    border: 1px solid #00796b;
+    font-size: 1em;
+}
+
+.subscription-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subscription-section li {
+    padding: 1em;
+    background: #fff;
+    margin: 0.5em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+
+.invoice-list {
+    margin-top: 1em;
+    text-align: left;
+    padding: 1em;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-list .invoice-item {
+    margin: 1em 0;
+}
+/* Legal & Security Section */
+.legal-security-section {
+    padding: 2em 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.legal-security-section h2 {
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.legal-security-section .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.legal-security-section h3 {
+    color: #00796b;
+    margin-top: 1em;
+}
+
+button {
+    padding: 1em;
+    background: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    background: #004d40;
+}
+
+.terms-conditions a {
+    color: #00796b;
+    text-decoration: none;
+}
+
+.terms-conditions a:hover {
+    text-decoration: underline;
+}
+/* Customization Section */
+.customization-section {
+    padding: 2em 0;
+    background: #f0f0f0;
+    text-align: center;
+}
+
+.customization-section h2 {
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+.customization-section .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.customization-section h3 {
+    color: #00796b;
+    margin-top: 1em;
+}
+
+button {
+    padding: 1em;
+    background: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    background: #004d40;
+}
+
+button:active {
+    background: #00332e;
+}
+/* Medical Travel Section */
+.medical-travel-section {
+    padding: 2em 0;
+    background: #e3f2fd;
+    text-align: center;
+}
+
+.medical-travel-section h2 {
+    margin-bottom: 1.5em;
+    color: #0277bd;
+}
+
+.medical-travel-section .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.medical-travel-section h3 {
+    color: #0277bd;
+    margin-top: 1em;
+}
+
+button {
+    padding: 1em;
+    background: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    background: #01579b;
+}
+/* Payment Options Section */
+.payment-options-section {
+    padding: 2em 0;
+    background: #e8f5e9;
+    text-align: center;
+}
+
+.payment-options-section h2 {
+    margin-bottom: 1.5em;
+    color: #388e3c;
+}
+
+.payment-options-section .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.payment-options-section h3 {
+    color: #388e3c;
+    margin-top: 1em;
+}
+
+button {
+    padding: 1em;
+    background: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1em 0;
+}
+
+button:hover {
+    background: #2c6c31;
+}
+/* Payment Notification */
+.payment-notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.payment-notification.error {
+    background: #f44336;
+}
+
+button#closeNotificationBtn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+/* Appointment Selection */
+.appointment-selection {
+    padding: 2em 0;
+    background: #f3f4f6;
+    text-align: center;
+}
+
+.appointment-selection h2 {
+    margin-bottom: 1.5em;
+    color: #388e3c;
+}
+
+.appointment-selection p {
+    font-size: 1.1em;
+    margin-bottom: 2em;
+}
+
+button#confirmAppointmentBtn {
+    padding: 1em;
+    background: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+button#confirmAppointmentBtn:hover {
+    background: #2c6c31;
+}
+/* Modify Appointment */
+.modify-appointment {
+    padding: 2em 0;
+    background: #fff;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.modify-appointment h3 {
+    margin-bottom: 1em;
+    color: #388e3c;
+}
+
+.modify-appointment p {
+    font-size: 1.1em;
+    margin-bottom: 2em;
+}
+
+button#modifyDateBtn, button#confirmModifyBtn {
+    padding: 1em;
+    background: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+button#modifyDateBtn:hover, button#confirmModifyBtn:hover {
+    background: #2c6c31;
+}
+/* Reminder Notification */
+.reminder-notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ff9800;
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+button#closeReminderNotificationBtn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+<!-- Navigation Menu -->
+<nav id="navbar">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#appointments">Appointments</a></li>
+        <li><a href="#payment">Payment</a></li>
+        <li><a href="#profile">Profile</a></li>
+    </ul>
+</nav>
+/* Light Theme */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: #121212;
+    color: #fff;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    padding: 0.8em 1.2em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#theme-toggle.dark {
+    background-color: #ff9800;
+}

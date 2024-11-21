@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Booking App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <h1>Medical Booking App</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Book Appointments with Ease</h2>
+            <p>Connect with top doctors from the comfort of your home.</p>
+            <button onclick="scrollToSection('features')">Explore Features</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Search Doctors</h3>
+                    <p>Find specialists near you or for remote consultations.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Video Consultations</h3>
+                    <p>Get medical advice through secure video calls.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Manage Appointments</h3>
+                    <p>Schedule, reschedule, or cancel appointments with ease.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Medical Booking App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<section id="login" class="login-section">
+    <div class="container">
+        <h2>Login / Sign Up</h2>
+        <div class="form-container">
+            <!-- Login Form -->
+            <form id="loginForm">
+                <h3>Login</h3>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm">
+                <h3>Sign Up</h3>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <label for="emailSignup">Email:</label>
+                <input type="email" id="emailSignup" name="email" placeholder="Enter your email" required>
+                <label for="passwordSignup">Password:</label>
+                <input type="password" id="passwordSignup" name="password" placeholder="Enter a password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</section>
+<section id="booking" class="booking-section">
+    <div class="container">
+        <h2>Book an Appointment</h2>
+
+        <!-- Search Doctors -->
+        <div class="search-doctor">
+            <h3>Find a Doctor</h3>
+            <label for="specialty">Specialty:</label>
+            <select id="specialty">
+                <option value="">-- Select Specialty --</option>
+                <option value="general">General Practitioner</option>
+                <option value="cardiology">Cardiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="pediatrics">Pediatrics</option>
+            </select>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="Enter location">
+
+            <button id="searchButton">Search</button>
+        </div>
+
+        <!-- Doctor List -->
+        <div id="doctorList" class="doctor-list">
+            <!-- Doctors will be loaded dynamically here -->
+        </div>
+    </div>
+</section>
+<!-- Appointment Booking Section -->
+<section id="appointment" class="appointment-section">
+    <div class="container">
+        <h2>Schedule Appointment</h2>
+        <div id="appointmentForm" class="appointment-form">
+            <label for="appointmentDate">Select Date:</label>
+            <input type="date" id="appointmentDate" required>
+
+            <label for="appointmentTime">Select Time:</label>
+            <select id="appointmentTime" required>
+                <option value="">-- Select Time --</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="13:00">01:00 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="15:00">03:00 PM</option>
+            </select>
+
+            <button id="confirmAppointment">Confirm Appointment</button>
+        </div>
+        <div id="confirmationMessage" class="confirmation-message"></div>
+    </div>
+</section>
+<section id="profile" class="profile-section">
+    <div class="container">
+        <h2>My Profile</h2>
+
+        <div id="userDetails" class="user-details">
+            <h3>User Information</h3>
+            <p><strong>Name:</strong> <span id="userName">John Doe</span></p>
+            <p><strong>Email:</strong> <span id="userEmail">johndoe@example.com</span></p>
+            <p><strong>Phone:</strong> <span id="userPhone">+213 555 1234</span></p>
+            <button id="editProfileBtn">Edit Profile</button>
+        </div>
+
+        <div id="appointmentHistory" class="appointment-history">
+            <h3>Appointment History</h3>
+            <ul id="appointmentsList">
+                <!-- Appointments will be dynamically added here -->
+            </ul>
+        </div>
+
+        <div id="changePassword" class="change-password">
+            <h3>Change Password</h3>
+            <input type="password" id="newPassword" placeholder="New Password">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <button id="changePasswordBtn">Change Password</button>
+        </div>
+    </div>
+</section>
+<section id="medicalLibrary" class="library-section">
+    <div class="container">
+        <h2>Medical Library</h2>
+        
+        <div class="library-content">
+            <h3>Articles</h3>
+            <ul id="articleList">
+                <!-- Articles will be dynamically added here -->
+            </ul>
+            
+            <h3>Videos</h3>
+            <ul id="videoList">
+                <!-- Videos will be dynamically added here -->
+            </ul>
+            
+            <h3>Live Webinars</h3>
+            <ul id="webinarList">
+                <!-- Webinars will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="notifications" class="notifications-section">
+    <div class="container">
+        <h2>Health Notifications</h2>
+        
+        <div id="notificationList" class="notification-list">
+            <!-- Notifications will be dynamically added here -->
+        </div>
+
+        <div id="addNotification" class="add-notification">
+            <h3>Add New Notification</h3>
+            <input type="text" id="notificationMessage" placeholder="Enter notification message">
+            <input type="datetime-local" id="notificationTime" placeholder="Set time for notification">
+            <button id="addNotificationBtn">Add Notification</button>
+        </div>
+    </div>
+</section>
+<section id="medicalCommunity" class="community-section">
+    <div class="container">
+        <h2>Medical Community</h2>
+        
+        <div class="community-content">
+            <h3>Discussion Forums</h3>
+            <ul id="forumList">
+                <!-- Discussion forums will be dynamically added here -->
+            </ul>
+            
+            <h3>Workshops and Webinars</h3>
+            <ul id="workshopList">
+                <!-- Workshops will be dynamically added here -->
+            </ul>
+        </div>
+        
+        <div id="joinWorkshop" class="join-workshop">
+            <h3>Join a Workshop</h3>
+            <select id="workshopSelect">
+                <!-- Available workshops will be added here -->
+            </select>
+            <button id="joinWorkshopBtn">Join</button>
+        </div>
+    </div>
+</section>
+<section id="rewards" class="rewards-section">
+    <div class="container">
+        <h2>Your Rewards</h2>
+
+        <div class="rewards-content">
+            <div id="points">
+                <h3>Current Points: <span id="userPoints">0</span></h3>
+            </div>
+            
+            <div id="rewardsList">
+                <h3>Available Rewards</h3>
+                <ul>
+                    <li>Free Consultation - 500 Points</li>
+                    <li>Discount on Lab Tests - 300 Points</li>
+                    <li>Discount on Prescription Drugs - 200 Points</li>
+                </ul>
+            </div>
+            
+            <div id="healthChallenges">
+                <h3>Join Health Challenges</h3>
+                <ul>
+                    <li><a href="#">Walk 10,000 Steps Daily - 100 Points</a></li>
+                    <li><a href="#">Meditation Challenge - 150 Points</a></li>
+                    <li><a href="#">Track Your Water Intake - 50 Points</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="logisticsSupport" class="logistics-section">
+    <div class="container">
+        <h2>Logistics & Collaboration</h2>
+        
+        <!-- Insurance Section -->
+        <div class="insurance-section">
+            <h3>Your Insurance Details</h3>
+            <p id="insuranceDetails">No insurance linked yet.</p>
+            <button id="linkInsuranceBtn">Link Your Insurance</button>
+        </div>
+        
+        <!-- Pharmacy Section -->
+        <div class="pharmacy-section">
+            <h3>Order Medicines</h3>
+            <button id="orderMedicineBtn">Order Medicines</button>
+        </div>
+        
+        <!-- Laboratory Section -->
+        <div class="laboratory-section">
+            <h3>Book Lab Tests</h3>
+            <button id="bookLabTestBtn">Book a Lab Test</button>
+        </div>
+    </div>
+</section>
+<section id="financialSystem" class="financial-section">
+    <div class="container">
+        <h2>Financial System</h2>
+
+        <!-- Payment Options -->
+        <div class="payment-options">
+            <h3>Select Payment Method</h3>
+            <select id="paymentMethod" class="payment-dropdown">
+                <option value="creditCard">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bitcoin">Bitcoin</option>
+                <option value="localPayment">Local Payment App</option>
+            </select>
+            <button id="payBtn">Pay Now</button>
+        </div>
+
+        <!-- Subscription Section -->
+        <div class="subscription-section">
+            <h3>Subscription Plans</h3>
+            <p>Choose a subscription plan for exclusive benefits:</p>
+            <ul>
+                <li><button id="basicPlanBtn">Basic Plan - $10/month</button></li>
+                <li><button id="premiumPlanBtn">Premium Plan - $25/month</button></li>
+                <li><button id="annualPlanBtn">Annual Plan - $250/year</button></li>
+            </ul>
+        </div>
+
+        <!-- Invoice Section -->
+        <div class="invoice-section">
+            <h3>Your Invoices</h3>
+            <button id="viewInvoicesBtn">View Invoices</button>
+            <div id="invoicesList" class="invoice-list">
+                <!-- Invoices will appear here -->
+            </div>
+        </div>
+    </div>
+</section>
+<section id="legalSecurity" class="legal-security-section">
+    <div class="container">
+        <h2>Legal & Security</h2>
+        
+        <!-- Digital Signature -->
+        <div class="digital-signature">
+            <h3>Digital Signature</h3>
+            <p>All medical prescriptions and reports will be signed digitally to ensure authenticity and prevent unauthorized modifications.</p>
+            <button id="signPrescriptionBtn">Sign Prescription</button>
+        </div>
+        
+        <!-- Transaction Documentation -->
+        <div class="transaction-documentation">
+            <h3>Transaction Documentation</h3>
+            <p>All transactions (appointments, payments, prescriptions) are recorded to ensure transparency and legal validity.</p>
+            <button id="viewTransactionsBtn">View Transactions</button>
+        </div>
+        
+        <!-- Data Privacy & Security -->
+        <div class="data-security">
+            <h3>Data Privacy & Security</h3>
+            <p>Your personal data and medical records are encrypted and stored securely. We comply with international data protection laws.</p>
+        </div>
+        
+        <!-- Terms & Conditions -->
+        <div class="terms-conditions">
+            <h3>Terms & Conditions</h3>
+            <p>By using our platform, you agree to our <a href="#privacyPolicy">Privacy Policy</a> and <a href="#termsOfService">Terms of Service</a>.</p>
+        </div>
+    </div>
+</section>
+<section id="advancedCustomization" class="customization-section">
+    <div class="container">
+        <h2>Advanced Customization</h2>
+
+        <!-- Color Scheme -->
+        <div class="color-scheme">
+            <h3>Choose Color Scheme</h3>
+            <button id="lightModeBtn">Light Mode</button>
+            <button id="darkModeBtn">Dark Mode</button>
+        </div>
+
+        <!-- Font Size -->
+        <div class="font-size">
+            <h3>Font Size</h3>
+            <button id="increaseFontBtn">Increase Font</button>
+            <button id="decreaseFontBtn">Decrease Font</button>
+        </div>
+
+        <!-- Cultural Preferences -->
+        <div class="cultural-preferences">
+            <h3>Cultural Preferences</h3>
+            <button id="fastingModeBtn">Enable Fasting Mode</button>
+        </div>
+
+        <!-- Language -->
+        <div class="language-options">
+            <h3>Language</h3>
+            <button id="arabicBtn">Arabic</button>
+            <button id="frenchBtn">French</button>
+        </div>
+    </div>
+</section>
+<section id="medicalTravel" class="medical-travel-section">
+    <div class="container">
+        <h2>Medical Travel Assistance</h2>
+        
+        <!-- Travel Booking -->
+        <div class="travel-booking">
+            <h3>Book Treatment Abroad</h3>
+            <p>Find the best medical centers abroad and book your treatment directly through our platform.</p>
+            <button id="bookTreatmentBtn">Book Treatment</button>
+        </div>
+        
+        <!-- Translation Services -->
+        <div class="translation-services">
+            <h3>Medical Translation Services</h3>
+            <p>Access professional medical translation services for all your documents and consultations abroad.</p>
+            <button id="accessTranslationBtn">Get Translation Services</button>
+        </div>
+        
+        <!-- Global Medical Centers -->
+        <div class="global-medical-centers">
+            <h3>Global Medical Centers</h3>
+            <p>Explore the top-rated hospitals and clinics around the world that provide world-class treatments.</p>
+            <button id="viewCentersBtn">View Medical Centers</button>
+        </div>
+        
+        <!-- Travel Guide -->
+        <div class="travel-guide">
+            <h3>Medical Travel Guide</h3>
+            <p>Get all the essential information you need for your medical travel including visa, flight, and accommodation options.</p>
+            <button id="viewTravelGuideBtn">View Travel Guide</button>
+        </div>
+    </div>
+</section>
+<section id="paymentOptions" class="payment-options-section">
+    <div class="container">
+        <h2>Payment Options for Medical Travel</h2>
+        
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <h3>Choose Your Payment Method</h3>
+            <p>We offer several payment methods to make your experience easier and more flexible.</p>
+            
+            <button id="creditCardBtn">Pay with Credit Card</button>
+            <button id="paypalBtn">Pay with PayPal</button>
+            <button id="cryptoBtn">Pay with Cryptocurrency</button>
+            <button id="bankTransferBtn">Bank Transfer</button>
+        </div>
+
+        <!-- Insurance -->
+        <div class="insurance">
+            <h3>Medical Travel Insurance</h3>
+            <p>Get comprehensive medical travel insurance for coverage during your trip.</p>
+            <button id="insuranceBtn">Get Insurance</button>
+        </div>
+
+        <!-- Payment Installments -->
+        <div class="payment-installments">
+            <h3>Pay in Installments</h3>
+            <p>Flexible installment plans are available for treatment costs.</p>
+            <button id="installmentsBtn">Select Installment Plan</button>
+        </div>
+
+        <!-- Payment Summary -->
+        <div class="payment-summary">
+            <h3>Payment Summary</h3>
+            <p>Your total payment amount will be shown here once you select your treatment and payment method.</p>
+            <button id="viewSummaryBtn">View Payment Summary</button>
+        </div>
+    </div>
+</section>
+<!-- Payment Notification Section -->
+<div id="paymentNotification" class="payment-notification">
+    <p id="notificationMessage"></p>
+    <button id="closeNotificationBtn">Close</button>
+</div>
+<!-- Treatment Appointment Selection -->
+<section id="appointmentSelection" class="appointment-selection">
+    <div class="container">
+        <h2>Choose Your Treatment Appointment</h2>
+        <p>Select an available time slot for your treatment or consultation.</p>
+
+        <div id="appointmentCalendar" class="calendar">
+            <!-- Calendar will be populated here -->
+        </div>
+
+        <button id="confirmAppointmentBtn">Confirm Appointment</button>
+    </div>
+</section>
+<!-- Modify Appointment Section -->
+<section id="modifyAppointmentSection" class="modify-appointment">
+    <h3>Modify Your Appointment</h3>
+    <div id="selectedAppointmentDetails">
+        <p>Your current appointment is: <span id="currentAppointmentDate"></span></p>
+        <button id="modifyDateBtn">Modify Date</button>
+    </div>
+
+    <div id="modifyDateSection" style="display: none;">
+        <h4>Select a new date for your appointment</h4>
+        <div id="appointmentCalendarModify"></div>
+        <button id="confirmModifyBtn">Confirm Modified Appointment</button>
+    </div>
+</section>
+<!-- Reminder Notification Section -->
+<div id="reminderNotification" class="reminder-notification">
+    <p>Your appointment is coming up in 24 hours. Don't forget!</p>
+    <button id="closeReminderNotificationBtn">Close</button>
+</div>
+/* Reset general styles for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* General Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+/* Header Styling */
+header {
+    background-color: #388e3c;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 1.5em 0;
+    font-size: 1.8em;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.4em;
+}
+
+/* Card Layout for Appointments */
+.card {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 2em;
+    margin: 2em 0;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #388e3c;
+    margin-bottom: 1em;
+}
+
+button {
+    padding: 1em 2em;
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: #2c6c31;
+}
+
+/* PayPal and Apple Pay Buttons */
+#paypal-button-container, #applePayButton {
+    margin-top: 1em;
+}
+
+#paypal-button-container button, #applePayButton {
+    padding: 1.2em 2.5em;
+    background-color: #0070ba;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+#paypal-button-container button:hover, #applePayButton:hover {
+    background-color: #005f87;
+}
+
+/* Notification Style */
+.reminder-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+}
+
+.reminder-notification button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+/* Animation for scrolling */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+<button id="theme-toggle">🌙</button>
